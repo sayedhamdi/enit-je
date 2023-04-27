@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تجديد بطاقة تعريف وطنية</title>
+  </head>
+  <body>
+    <h1>تجديد بطاقة تعريف وطنية</h1>
+    <form action="index.html" method="">
+      <label>
+        nom
+        <input type="text" name="nom" required minlength="3" maxlength="12" />
+      </label>
+
+      <br />
+
+      <label for="prenom">prenom</label>
+      <input
+        type="text"
+        id="prenom"
+        value="mohsen"
+        name="prenom"
+        placeholder="inserez votre prenom"
+      />
+      <label for="pass">mot de passe</label>
+      <input type="password" id="pass" />
+      <br />
+      <label for="age">age</label>
+      <input type="number" min="18" name="age" id="age" />
+      <hr />
+      <span>date delivrance</span>
+      <input type="date" name="date" />
+      <br />
+      <span>Old CIN</span>
+      <input type="file" />
+      <br />
+      <span>couleur de cin</span>
+      <input type="color" />
+      <br />
+      <span>location</span>
+      <select>
+        <option>Tunis</option>
+        <option>Sfax</option>
+        <option>Sousse</option>
+        <option>Djerba</option>
+        <option>Gafsa</option>
+        <option>Kef</option>
+      </select>
+      <br />
+      <span>mehna</span>
+      <input list="mehna" />
+      <datalist id="mehna">
+        <option value="Wakil bi charika"></option>
+        <option value="3amel yawmi"></option>
+        <option value="Mouhandez"></option>
+        <option value="ostedh jemi3i"></option>
+        <option value="touskiyé formatikque"></option>
+      </datalist>
+      <br />
+      <span> Raison mtaa dhaye3: </span>
+      <br />
+      tser9et <input type="radio" name="raison" /> tkhatfet
+      <input type="radio" name="raison" value="tkhatfet" /> dha3et
+      <input type="radio" name="raison" value="dha3et" />
+      <br />
+      <br />
+      <label>Sport maghroum bih</label>
+      <br />
+      <label>football<input type="checkbox" name="" /> </label>
+      <label>tennis<input type="checkbox" /> </label>
+      <label>swimming<input type="checkbox" /> </label>
+      <br />
+      <input type="submit" value="envoyer ma demande" />
+      <button>Envoyer</button>
+    </form>
+  </body>
+</html>
