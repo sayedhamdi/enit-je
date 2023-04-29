@@ -1,0 +1,22 @@
+* {
+  color: red;
+}
+p {
+  color: blueviolet;
+  background-color: green;
+}
+#para {
+  background-color: brown;
+}
+
+.kbar {
+  font-size: 40px;
+}
+
+.inihomZrok {
+  border: 4px solid blue;
+}
+
+.inihomKhdhor {
+  border: 4px solid orange;
+}
