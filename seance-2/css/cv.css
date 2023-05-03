@@ -1,0 +1,45 @@
+div {
+  border: 1px solid black;
+  margin: 20px 0px;
+}
+
+.pic,
+.info {
+  display: inline-block;
+}
+.pic {
+  width: 30%;
+  background: red;
+  float: right;
+}
+.pic img {
+  width: 100%;
+}
+.info {
+  width: 69%;
+}
+
+table {
+  width: 80%;
+  margin-left: 40px;
+}
+th,
+td {
+  min-width: 200px;
+}
+th {
+  text-align: left;
+}
+body {
+  background: gray;
+}
+
+.hr {
+  border: 1px solid black;
+  width: 200px;
+  background: black;
+}
+
+h5 {
+  margin: 0;
+}
