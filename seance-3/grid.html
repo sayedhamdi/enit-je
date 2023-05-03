@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .orange {
+        background: orange;
+      }
+      .blue {
+        background: blue;
+      }
+      .green {
+        background: green;
+      }
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas:
+          "hd hd hd hd   hd   hd   hd   hd   hd"
+          "sd sd sd main main main main main main"
+          "ft ft ft ft   ft   ft   ft   ft   ft";
+      }
+      .header {
+        background: blue;
+        grid-area: hd;
+      }
+      .footer {
+        background: orange;
+        grid-area: ft;
+      }
+      .content {
+        background: linear-gradient(red 10%, 60%, blue 80%);
+        grid-area: main;
+      }
+      .sidebar {
+        background: gray;
+
+        grid-area: sd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="orange"></div>
+      <div class="blue"></div>
+      <div class="green"></div>
+      <div class="orange"></div>
+      <div class="green"></div>
+      <div class="green"></div>
+    </div>
+
+    <div class="wrapper">
+      <div class="header">Header</div>
+      <div class="sidebar">Sidebar</div>
+      <div class="content">Content</div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>
