@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        width: 0px;
+        height: 100vh;
+        background: orange;
+        text-align: center;
+      }
+
+      .animation-slide-open {
+        animation-name: slide-open;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+      }
+      .animation-slide-close {
+        animation-name: slide-close;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+      }
+      @keyframes slide-open {
+        0% {
+          width: 0px;
+        }
+        50% {
+          background: blue;
+          width: 300px;
+        }
+        100% {
+          background: red;
+          width: 100px;
+        }
+      }
+      @keyframes slide-close {
+        0% {
+          width: 100px;
+        }
+        50% {
+          background: blue;
+          width: 300px;
+        }
+        100% {
+          background: red;
+          width: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">logo</div>
+    <button class="btn">open</button>
+  </body>
+  <script>
+    let box = document.querySelector(".box");
+
+    let btn = document.querySelector(".btn");
+    let open = false;
+    btn.onclick = () => {
+      if (open) {
+        box.classList.add("animation-slide-close");
+        box.classList.remove("animation-slide-open");
+      } else {
+        box.classList.add("animation-slide-open");
+        box.classList.remove("animation-slide-close");
+      }
+      open = !open;
+    };
+  </script>
+</html>
