@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .navbar span {
+        font-size: 40px;
+      }
+      .navbar {
+        background: black;
+        height: 100px;
+        padding: 0 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar ul {
+        gap: 20px;
+        display: flex;
+        list-style: none;
+        font-size: 20px;
+        margin: 0 20px;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+      }
+      .navbar button {
+        padding: 10px 20px;
+      }
+
+      @media screen and (max-width: 780px) {
+        .navbar {
+          background: gray;
+        }
+      }
+      @media screen {
+        body {
+          color: green;
+        }
+      }
+      @media print {
+        body {
+          color: orange;
+        }
+      }
+
+      .phone {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        width: 30px;
+      }
+      .phone:hover {
+        box-shadow: 4px 6px 16px gray;
+      }
+      .phone span {
+        display: block;
+        height: 4px;
+        width: 30px;
+        background: white;
+      }
+      @media screen and (max-width: 780px) {
+        .phone {
+          display: flex;
+        }
+        .desktop {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 780px) {
+        .desktop {
+          display: flex;
+        }
+        .phone {
+          display: none;
+        }
+      }
+
+      .products {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .product {
+        width: 30%;
+        height: 400px;
+        background: orange;
+      }
+
+      @media screen and (max-width: 700px) {
+        .product {
+          width: 45%;
+        }
+      }
+      @media screen and (max-width: 350px) {
+        .product {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <span>logo</span>
+
+      <div class="flex desktop">
+        <ul>
+          <li>about</li>
+          <li>contact</li>
+          <li>about us</li>
+          <li>products</li>
+          <li>what people say</li>
+        </ul>
+
+        <button>sign up</button>
+        <button>sign in</button>
+      </div>
+      <div class="phone">
+        <span class="row"></span><span class="row"></span
+        ><span class="row"></span>
+      </div>
+    </div>
+
+    hello
+    <div class="products">
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+      <div class="product"></div>
+    </div>
+  </body>
+</html>
