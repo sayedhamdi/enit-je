@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    X <input type="number" />
+    <br />
+    Y <input type="number" />
+    <br />
+    <button onclick="add()">+</button>
+    <button>-</button>
+    <button>/</button>
+    <button>*</button>
+    <div>
+      resultat =
+      <span id="resultat"></span>
+    </div>
+  </body>
+  <script>
+    let result = document.querySelector("#resultat");
+    result.innerHTML = 5;
+    result.style.color = "red";
+
+    function add() {
+      console.log("rak nzelt add");
+    }
+  </script>
+</html>
