@@ -7,27 +7,56 @@
     <title>Document</title>
   </head>
   <body>
-    X <input type="number" />
+    X <input type="number" id="x" />
     <br />
-    Y <input type="number" />
+    Y <input type="number" id="y" />
     <br />
-    <button onclick="add()">+</button>
-    <button>-</button>
-    <button>/</button>
-    <button>*</button>
+    <button onclick="add()" id="addBTN">+</button>
+    <button onclick="sous()">-</button>
+    <button onclick="div()">/</button>
+    <button onclick="mult()">*</button>
     <div>
       resultat =
       <span id="resultat"></span>
     </div>
   </body>
   <script>
+    let x = document.querySelector("#x");
+    let y = document.querySelector("#y");
+    let addBTN = document.querySelector("#addBTN");
     let result = document.querySelector("#resultat");
-    result.innerHTML = 5;
-    result.style.color = "red";
+    if (x.value == "" || y.value == "") {
+      addBTN.disabled = true;
+    } else {
+      addBTN.disabled = false;
+    }
+
+    x.onchange = function () {
+      if (x.value == "" || y.value == "") {
+        addBTN.disabled = true;
+      } else {
+        addBTN.disabled = false;
+      }
+    };
+    y.onchange = function () {
+      if (x.value == "" || y.value == "") {
+        addBTN.disabled = true;
+      } else {
+        addBTN.disabled = false;
+      }
+    };
 
     function add() {
-      console.log("rak nzelt add");
+      result.innerHTML = Number(x.value) + Number(y.value);
     }
-    console.log([1, 2, 3]);
+    function mult() {
+      result.innerHTML = Number(x.value) * Number(y.value);
+    }
+    function sous() {
+      result.innerHTML = Number(x.value) - Number(y.value);
+    }
+    function div() {
+      result.innerHTML = Number(x.value) / Number(y.value);
+    }
   </script>
 </html>

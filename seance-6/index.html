@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+        width: 100%;
+      }
+      li div {
+        display: flex;
+        justify-content: space-between;
+        background: orange;
+        width: 100%;
+        padding: 2px 4px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tasks"></div>
+      <div>
+        <input type="text" />
+        <button id="bouttonjdid">click</button>
+      </div>
+      <ul></ul>
+    </div>
+  </body>
+  <script>
+    /// je selectionne tout les elements li hachti bihom
+    let btn = document.querySelector("#bouttonjdid");
+    let ul = document.querySelector("ul");
+    let input = document.querySelector("input");
+    let tasks = document.querySelector(".tasks");
+    tasks.innerHTML = `0/${ul.childNodes.length}`;
+    let done = 0;
+    function createAToDo(task) {
+      let div = document.createElement("div");
+      let li = document.createElement("li");
+      let span = document.createElement("span");
+      let checkbox = document.createElement("input");
+      let deleteBTN = document.createElement("button");
+      checkbox.type = "checkbox";
+      deleteBTN.innerText = "X";
+      span.innerText = task;
+      div.appendChild(checkbox);
+      div.appendChild(span);
+      div.appendChild(deleteBTN);
+      li.appendChild(div);
+      return li;
+    }
+
+    function sayHello() {
+      alert("hello");
+    }
+    function keyPressFnc(e) {
+      console.log(e);
+      if (e.keyCode == 13) {
+        alert("nzelt ala entrer");
+      }
+    }
+    function addTodo() {
+      let task = createAToDo(input.value);
+      console.log(task.childNodes);
+      task.childNodes[0].childNodes[2].addEventListener("click", function () {
+        task.remove();
+        tasks.innerHTML = `${done}/${ul.childNodes.length}`;
+      });
+      let checkbox = task.childNodes[0].childNodes[0];
+      checkbox.addEventListener("change", function () {
+        console.log("tekhjdem");
+        if (checkbox.checked) {
+          done++;
+          task.childNodes[0].childNodes[1].style.textDecoration =
+            "line-through";
+        } else {
+          done--;
+          task.childNodes[0].childNodes[1].style.textDecoration = "";
+        }
+        tasks.innerHTML = `${done}/${ul.childNodes.length}`;
+      });
+
+      ul.appendChild(task);
+      tasks.innerHTML = `${done}/${ul.childNodes.length}`;
+    }
+    btn.addEventListener("click", addTodo);
+    btn.addEventListener("keypress", keyPressFnc);
+  </script>
+</html>
